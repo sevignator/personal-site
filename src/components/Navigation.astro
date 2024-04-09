@@ -1,31 +1,21 @@
 ---
-import SiteLogo from './SiteLogo.astro';
+
 ---
 
 <style>
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
   menu {
     display: flex;
     gap: 15px;
     padding: 0;
     list-style: none;
   }
-  a {
+
+  .nav-link {
     font-size: 1.25rem;
   }
 </style>
 
-<nav>
-  <a href='/'>
-    <SiteLogo colorPrimary='blue' width='60' />
-  </a>
-
-  <menu>
-    <li><a href='/blog/'>Blog</a></li>
-    <li><a href='/about/'>About</a></li>
-  </menu>
-</nav>
+<menu>
+  <li class='nav-link'><a href='/blog/'>Blog</a></li>
+  <li class='nav-link'><a href='/about/'>About</a></li>
+</menu>

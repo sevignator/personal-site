@@ -1,0 +1,26 @@
+---
+import Navigation from './Navigation.astro';
+import SiteLogo from './SiteLogo.astro';
+---
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-link {
+    line-height: 0;
+  }
+</style>
+
+<header>
+  <nav>
+    <a class='logo-link' href='/'>
+      <SiteLogo colorPrimary='blue' width='60' />
+    </a>
+
+    <Navigation />
+  </nav>
+</header>
