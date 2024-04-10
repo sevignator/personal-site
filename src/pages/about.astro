@@ -1,7 +1,5 @@
 ---
-import '@styles/global.css';
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 
 const pageTitle = 'About me';
 const hobbies = ['reading', 'writing', 'coding', 'cycling'];
@@ -14,55 +12,26 @@ const skillset = [
   'Astro',
   'Drupal 8+',
 ];
-
-const skillColor = 'navy';
-const fontWeight = 'bold';
-const textCase = 'uppercase';
 ---
 
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-    <title>{pageTitle}</title>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Quick facts</h2>
 
-    <style define:vars={{ skillColor, fontWeight, textCase }}>
-      .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
+  <ul>
+    <li>My name is Mikaël.</li>
+    <li>I'm a full-stack developer from Gatineau, Canada.</li>
+    <li>
+      My hobbies include: {
+        hobbies.map((hobby, index) => {
+          return index !== hobbies.length - 1 ? `${hobby}, ` : ` and ${hobby}`;
+        })
       }
-    </style>
-  </head>
-  <body>
-    <Header />
+    </li>
+  </ul>
 
-    <h1>{pageTitle}</h1>
+  <h2>Skillset</h2>
 
-    <h2>Quick facts</h2>
-
-    <ul>
-      <li>My name is Mikaël.</li>
-      <li>I'm a full-stack developer from Gatineau, Canada.</li>
-      <li>
-        My hobbies include: {
-          hobbies.map((hobby, index) => {
-            return index !== hobbies.length - 1
-              ? `${hobby}, `
-              : ` and ${hobby}`;
-          })
-        }
-      </li>
-    </ul>
-
-    <h2>Skillset</h2>
-
-    <ul>
-      {skillset.map((skill) => <li class='skill'>{skill}</li>)}
-    </ul>
-
-    <Footer />
-  </body>
-</html>
+  <ul>
+    {skillset.map((skill) => <li class='skill'>{skill}</li>)}
+  </ul>
+</BaseLayout>
