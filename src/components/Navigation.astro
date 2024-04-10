@@ -163,7 +163,7 @@ import { Icon } from 'astro-icon/components';
   }
 
   // Close modal if the user click outside of the content wrapper
-  function handleBackdropClose(e) {
+  function handleBackdropClose(e: MouseEvent) {
     if (e.target !== dialogEl) return;
 
     closeMenu();
