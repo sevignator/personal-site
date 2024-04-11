@@ -1,16 +1,11 @@
 ---
-const { colorPrimary = '' } = Astro.props;
-const { width = '40' } = Astro.props;
----
+type Props = {
+  colorPrimary?: string;
+  width?: string | number;
+};
 
-<style define:vars={{ colorPrimary }}>
-  svg {
-    transition: fill 250ms;
-  }
-  svg:hover {
-    fill: var(--colorPrimary);
-  }
-</style>
+const { colorPrimary = '', width = '40' } = Astro.props;
+---
 
 <svg
   width={width}
@@ -30,3 +25,14 @@ const { width = '40' } = Astro.props;
     </g>
   </g>
 </svg>
+
+<!-- CSS -->
+
+<style define:vars={{ colorPrimary }}>
+  svg {
+    transition: fill 250ms;
+  }
+  svg:hover {
+    fill: var(--colorPrimary);
+  }
+</style>

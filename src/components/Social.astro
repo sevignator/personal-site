@@ -1,6 +1,15 @@
 ---
+type Props = {
+  platform: string;
+  username: string;
+};
+
 const { platform, username } = Astro.props;
 ---
+
+<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+
+<!-- CSS -->
 
 <style>
   a {
@@ -12,5 +21,3 @@ const { platform, username } = Astro.props;
     text-decoration: none;
   }
 </style>
-
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
