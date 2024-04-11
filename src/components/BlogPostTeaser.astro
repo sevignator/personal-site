@@ -1,12 +1,52 @@
 ---
+import { type CollectionEntry } from 'astro:content';
+import { formatDate } from '@utils/dates';
+
 type Props = {
-  url: string;
-  title: string;
+  post: CollectionEntry<'posts'>;
 };
 
-const { url, title } = Astro.props;
+const { post } = Astro.props;
 ---
 
-<li>
-  <a href={url}>{title}</a>
-</li>
+<article class='post-teaser'>
+  <a class='post-teaser-link' href={`/blog/${post.slug}/`}>
+    <h2 class='post-teaser-title'>{post.data.title}</h2>
+    <time class='post-teaser-date'>{formatDate(post.data.pubDate)}</time>
+    <p class='post-teaser-description'>{post.data.description}</p>
+  </a>
+</article>
+
+<!-- CSS -->
+
+<style>
+  .post-teaser-link {
+    display: flex;
+    flex-direction: column;
+    margin-inline: -20px;
+    padding: 20px;
+    background-color: #ddd;
+    text-decoration: none;
+    color: black;
+    border-radius: 8px;
+    transition: background-color 250ms;
+
+    &:hover {
+      background-color: #d0d0d0;
+    }
+  }
+
+  .post-teaser-title {
+    margin: 0;
+    font-size: 1.75rem;
+  }
+
+  .post-teaser-date {
+    margin: 0;
+  }
+
+  .post-teaser-description {
+    margin-block: 0.5rem 0;
+    font-size: 1.125rem;
+  }
+</style>

@@ -2,6 +2,7 @@
 import { type CollectionEntry } from 'astro:content';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Tag from '@components/Tag.astro';
+import { formatDate } from '@utils/dates';
 
 type Props = {
   frontmatter: CollectionEntry<'posts'>['data'];
@@ -11,12 +12,11 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p>Written by {frontmatter.author}</p>
-  <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
+  <p>Published on: {formatDate(frontmatter.pubDate)}</p>
+  <slot />
   <div class='tags'>
     {frontmatter.tags.map((tag) => <Tag label={tag} />)}
   </div>
-  <slot />
 </BaseLayout>
 
 <!-- CSS -->

@@ -9,11 +9,5 @@ const pageTitle = 'Blog';
 
 <BaseLayout pageTitle={pageTitle}>
   <p>Musings and ponderings by yours truly.</p>
-  <ul>
-    {
-      allPosts.map((post) => (
-        <BlogPostTeaser url={`/blog/${post.slug}/`} title={post.data.title} />
-      ))
-    }
-  </ul>
+  {allPosts.map((post) => <BlogPostTeaser post={post} />)}
 </BaseLayout>
