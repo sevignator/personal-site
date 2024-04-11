@@ -3,18 +3,6 @@ import Navigation from './Navigation.astro';
 import SiteLogo from './SiteLogo.astro';
 ---
 
-<style>
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo-link {
-    line-height: 0;
-  }
-</style>
-
 <header>
   <nav>
     <a class='logo-link' href='/'>
@@ -24,3 +12,18 @@ import SiteLogo from './SiteLogo.astro';
     <Navigation />
   </nav>
 </header>
+
+<!-- CSS -->
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  .logo-link {
+    line-height: 0;
+  }
+</style>
