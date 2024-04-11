@@ -1,7 +1,7 @@
 ---
 title: Getting started
 pubDate: 2024-04-11
-description: My first foray into the world of blogging. If you've made your way here somehow, welcome!
+description: My first foray into the world of blogging. If you've made it here somehow, welcome!
 tags: ['writing']
 ---
 

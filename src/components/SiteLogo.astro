@@ -32,6 +32,10 @@ const { colorPrimary = '', width = '40' } = Astro.props;
   svg {
     transition: fill 250ms;
   }
+
+  :global(.dark) svg {
+    fill: white;
+  }
   svg:hover {
     fill: var(--colorPrimary);
   }
