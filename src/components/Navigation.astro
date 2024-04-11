@@ -98,6 +98,7 @@ const links = [
     height: 100%;
     padding: 30px;
     background-color: black;
+    color: white;
   }
 
   .menu-close-btn {
@@ -124,21 +125,12 @@ const links = [
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
-    color: white;
     border-bottom: solid 2px transparent;
     transition: border-color 200ms;
 
     &:hover,
     &:focus {
       border-color: currentColor;
-    }
-
-    .dark & {
-      color: #fff;
-    }
-
-    @media screen and (min-width: 768px) {
-      color: black;
     }
   }
 
@@ -148,11 +140,10 @@ const links = [
     border: 0;
     padding: 0;
     line-height: 1;
-    cursor: pointer;
   }
 
-  [data-icon='lucide:x'] {
-    color: white;
+  [data-icon] {
+    color: currentColor;
   }
 
   @keyframes slide-in {
