@@ -1,0 +1,21 @@
+---
+const { label } = Astro.props;
+---
+
+<a class='tag' href={`/tags/${label}`}>
+  {label}
+</a>
+
+<!-- CSS -->
+
+<style>
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1.15em;
+    background-color: #f8fcfd;
+    color: #00539f;
+  }
+</style>
