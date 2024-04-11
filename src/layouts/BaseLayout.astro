@@ -1,4 +1,5 @@
 ---
+import '@styles/reset.css';
 import '@styles/global.css';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
@@ -17,10 +18,28 @@ const { pageTitle } = Astro.props;
   <body>
     <Header />
 
-    <h1>{pageTitle}</h1>
-
-    <slot />
+    <main class='container'>
+      <h1>{pageTitle}</h1>
+      <slot />
+    </main>
 
     <Footer />
   </body>
 </html>
+
+<!-- CSS -->
+
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  h1 {
+    margin-top: 30px;
+  }
+</style>

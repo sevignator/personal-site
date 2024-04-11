@@ -4,7 +4,7 @@ import SiteLogo from './SiteLogo.astro';
 ---
 
 <header>
-  <nav>
+  <nav class='container'>
     <a class='logo-link' href='/'>
       <SiteLogo colorPrimary='blue' width='60' />
     </a>
@@ -16,11 +16,15 @@ import SiteLogo from './SiteLogo.astro';
 <!-- CSS -->
 
 <style>
+  header {
+    height: fit-content;
+  }
+
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 60px;
+    padding-block: 30px;
   }
 
   .logo-link {
