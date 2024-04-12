@@ -12,7 +12,7 @@ const { post } = Astro.props;
 <article class='post-teaser'>
   <a class='post-teaser-link' href={`/blog/${post.slug}/`}>
     <h2 class='post-teaser-title'>{post.data.title}</h2>
-    <time class='post-teaser-date'>{formatDate(post.data.pubDate)}</time>
+    <p class='post-teaser-date'><time>{formatDate(post.data.pubDate)}</time></p>
     <p class='post-teaser-description'>{post.data.description}</p>
   </a>
 </article>
@@ -23,30 +23,37 @@ const { post } = Astro.props;
   .post-teaser-link {
     display: flex;
     flex-direction: column;
-    margin-inline: -20px;
-    padding: 20px;
-    background-color: #ddd;
+    margin-inline: -15px;
+    padding: 15px;
     text-decoration: none;
-    color: black;
-    border-radius: 8px;
-    transition: background-color 250ms;
+    color: var(--clr-gray-900);
+    border-radius: 12px;
+    border: solid 1px transparent;
+    transition:
+      background-color 250ms,
+      border-color 250ms;
 
     &:hover {
-      background-color: #d0d0d0;
+      background-color: var(--clr-gray-200);
+      border-color: var(--clr-gray-300);
     }
   }
 
   .post-teaser-title {
-    margin: 0;
-    font-size: 1.75rem;
+    margin-block: 0 0.675rem;
+    font-size: 1.875rem;
   }
 
   .post-teaser-date {
-    margin: 0;
+    order: -1;
+    margin-block: 0 0.125rem;
+    font-size: 1rem;
+    color: var(--clr-blue-900);
   }
 
   .post-teaser-description {
-    margin-block: 0.5rem 0;
-    font-size: 1.125rem;
+    margin: 0;
+    gap: 30px;
+    line-height: 1.25;
   }
 </style>
