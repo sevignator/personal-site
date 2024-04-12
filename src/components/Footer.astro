@@ -20,6 +20,12 @@ const currentYear = new Date().getFullYear();
     padding-block: 10px;
     margin-top: 40px;
     background-color: var(--clr-gray-300);
+    font-size: 0.925rem;
+    transition: background-color var(--timing-toggle);
+  }
+
+  :global(.dark) footer {
+    background-color: var(--clr-gray-900);
   }
 
   .footer-content {

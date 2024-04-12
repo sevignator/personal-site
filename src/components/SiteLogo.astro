@@ -30,7 +30,7 @@ const { colorPrimary = '', width = '40' } = Astro.props;
 
 <style define:vars={{ colorPrimary }}>
   svg {
-    transition: fill 250ms;
+    transition: fill var(--timing-toggle);
   }
 
   :global(.dark) svg {

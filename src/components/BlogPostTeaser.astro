@@ -26,16 +26,20 @@ const { post } = Astro.props;
     margin-inline: -15px;
     padding: 15px;
     text-decoration: none;
-    color: var(--clr-gray-900);
     border-radius: 12px;
     border: solid 1px transparent;
     transition:
-      background-color 250ms,
-      border-color 250ms;
+      background-color var(--timing-toggle),
+      border-color var(--timing-toggle);
 
     &:hover {
       background-color: var(--clr-gray-200);
       border-color: var(--clr-gray-300);
+
+      .dark & {
+        background-color: var(--clr-gray-900);
+        border-color: var(--clr-gray-700);
+      }
     }
   }
 
@@ -49,6 +53,10 @@ const { post } = Astro.props;
     margin-block: 0 0.125rem;
     font-size: 1rem;
     color: var(--clr-blue-900);
+
+    .dark & {
+      color: var(--clr-blue-500);
+    }
   }
 
   .post-teaser-description {

@@ -3,8 +3,13 @@
   --clr-gray-200: #e8e8ec;
   --clr-gray-300: #d7d7e3;
   --clr-gray-500: #d7d7e3;
-  --clr-gray-900: #11101b;
+  --clr-gray-700: #1f1e30;
+  --clr-gray-800: #11101b;
+  --clr-gray-900: #0a0a10;
+  --clr-blue-500: #7676ff;
   --clr-blue-900: #0000ff;
+
+  --timing-toggle: 250ms;
 }
 
 html {
@@ -13,12 +18,12 @@ html {
   background-color: var(--clr-gray-100);
   color: var(--clr-gray-900);
   transition:
-    background 250ms,
-    color 250ms;
+    background var(--timing-toggle),
+    color var(--timing-toggle);
 
   &.dark {
-    background-color: #11101b;
-    color: #fff;
+    background-color: var(--clr-gray-800);
+    color: var(--clr-gray-100);
   }
 }
 
@@ -53,6 +58,6 @@ h1, h2, h3, h4, h5, h6 {
 .container {
   margin-inline: auto;
   width: 100%;
-  max-width: 100ch;
+  max-width: 960px;
   padding-inline: 30px;
 }
