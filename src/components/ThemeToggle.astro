@@ -21,22 +21,25 @@
 
 <style>
   #theme-toggle {
+    display: grid;
+    padding: 0;
     border: 0;
     background: none;
     cursor: pointer;
   }
   .sun {
-    fill: black;
+    fill: var(--clr-gray-900);
+
+    .dark & {
+      fill: transparent;
+    }
   }
   .moon {
     fill: transparent;
-  }
 
-  :global(.dark) .sun {
-    fill: transparent;
-  }
-  :global(.dark) .moon {
-    fill: white;
+    .dark & {
+      fill: var(--clr-gray-100);
+    }
   }
 </style>
 
