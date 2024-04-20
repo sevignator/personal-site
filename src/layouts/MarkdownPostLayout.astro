@@ -14,7 +14,7 @@ const { frontmatter } = Astro.props;
 <BaseLayout pageTitle={frontmatter.title}>
   <p>Published on: {formatDate(frontmatter.pubDate)}</p>
   <slot />
-  <div class='tags'>
+  <div class="tags">
     {frontmatter.tags.map((tag) => <Tag label={tag} />)}
   </div>
 </BaseLayout>

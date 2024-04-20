@@ -57,6 +57,14 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+pre {
+  margin-inline: -16px;
+  margin-block: 24px;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 0.925rem;
+}
+
 /* Utilities */
 
 .container {
