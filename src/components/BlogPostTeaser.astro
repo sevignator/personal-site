@@ -9,11 +9,11 @@ type Props = {
 const { post } = Astro.props;
 ---
 
-<article class='post-teaser'>
-  <a class='post-teaser-link' href={`/blog/${post.slug}/`}>
-    <h2 class='post-teaser-title'>{post.data.title}</h2>
-    <p class='post-teaser-date'><time>{formatDate(post.data.pubDate)}</time></p>
-    <p class='post-teaser-description'>{post.data.description}</p>
+<article class="post-teaser">
+  <a class="post-teaser-link" href={`/blog/${post.slug}/`}>
+    <h2 class="post-teaser-title">{post.data.title}</h2>
+    <p class="post-teaser-date"><time>{formatDate(post.data.pubDate)}</time></p>
+    <p class="post-teaser-description">{post.data.description}</p>
   </a>
 </article>
 
@@ -62,6 +62,6 @@ const { post } = Astro.props;
   .post-teaser-description {
     margin: 0;
     gap: 30px;
-    line-height: 1.25;
+    line-height: 1.5;
   }
 </style>
