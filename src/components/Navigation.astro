@@ -4,25 +4,25 @@ import { Icon } from 'astro-icon/components';
 const links = [
   { text: 'Blog', path: '/blog' },
   { text: 'Tags', path: '/tags' },
-  { text: 'About', path: '/about' },
+  { text: 'About me', path: '/about' },
 ];
 ---
 
-<div class='menu-mobile'>
-  <button class='icon-btn menu-open-btn'>
-    <Icon name='lucide:menu' size={30} />
+<div class="menu-mobile">
+  <button class="icon-btn menu-open-btn">
+    <Icon name="lucide:menu" size={30} />
   </button>
 
-  <dialog class='menu-dialog'>
-    <div class='menu-dialog-content'>
-      <button class='icon-btn menu-close-btn'>
-        <Icon name='lucide:x' size={30} />
+  <dialog class="menu-dialog">
+    <div class="menu-dialog-content">
+      <button class="icon-btn menu-close-btn">
+        <Icon name="lucide:x" size={30} />
       </button>
-      <menu class='nav-links'>
+      <menu class="nav-links">
         {
           links.map((link) => (
             <li>
-              <a class='nav-link' href={link.path}>
+              <a class="nav-link" href={link.path}>
                 {link.text}
               </a>
             </li>
@@ -33,12 +33,12 @@ const links = [
   </dialog>
 </div>
 
-<div class='menu-desktop'>
-  <menu class='nav-links'>
+<div class="menu-desktop">
+  <menu class="nav-links">
     {
       links.map((link) => (
         <li>
-          <a class='nav-link' href={link.path}>
+          <a class="nav-link" href={link.path}>
             {link.text}
           </a>
         </li>
@@ -209,7 +209,7 @@ const links = [
         delete dialogEl.dataset.closing;
         dialogEl.close();
       },
-      { once: true }
+      { once: true },
     );
   }
 

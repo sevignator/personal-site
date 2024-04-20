@@ -19,6 +19,8 @@
     "typescript": "^5.4.4"
   },
   "devDependencies": {
-    "@iconify-json/lucide": "^1.1.180"
+    "@iconify-json/lucide": "^1.1.180",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0"
   }
 }
