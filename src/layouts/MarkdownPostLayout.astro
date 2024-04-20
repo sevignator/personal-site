@@ -12,7 +12,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p>Published on: {formatDate(frontmatter.pubDate)}</p>
+  <p class="dateline">{formatDate(frontmatter.pubDate)}</p>
   <slot />
   <div class="tags">
     {frontmatter.tags.map((tag) => <Tag label={tag} />)}
@@ -22,6 +22,11 @@ const { frontmatter } = Astro.props;
 <!-- CSS -->
 
 <style>
+  .dateline {
+    font-family: var(--ff-cursive);
+    color: var(--clr-accent);
+  }
+
   .tags {
     display: flex;
     flex-wrap: wrap;

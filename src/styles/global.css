@@ -1,5 +1,5 @@
 :root {
-  /* Colors */
+  /* Colors (basic) */
   --clr-gray-100: #f0f0f5;
   --clr-gray-200: #e8e8ec;
   --clr-gray-300: #d7d7e3;
@@ -9,6 +9,13 @@
   --clr-gray-900: #0a0a10;
   --clr-blue-500: #7676ff;
   --clr-blue-900: #0000ff;
+
+  /* Colors (role) */
+  --clr-accent: var(--clr-blue-900);
+
+  &.dark {
+    --clr-accent: var(--clr-blue-500);
+  }
 
   /* Time */
   --timing-toggle: 250ms;
