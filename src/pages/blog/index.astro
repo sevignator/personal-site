@@ -8,12 +8,8 @@ const pageTitle = 'Blog';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class='row'>
-    <div class='left-col'>
-      {allPosts.map((post) => <BlogPostTeaser post={post} />)}
-    </div>
-
-    <div class='right-col'></div>
+  <div class="row">
+    {allPosts.map((post) => <BlogPostTeaser post={post} />)}
   </div>
 </BaseLayout>
 
@@ -22,13 +18,7 @@ const pageTitle = 'Blog';
 <style>
   .row {
     display: flex;
-  }
-
-  .left-col {
-    flex: 2;
-  }
-
-  .right-col {
-    flex: 1;
+    flex-direction: column;
+    gap: 8px;
   }
 </style>
