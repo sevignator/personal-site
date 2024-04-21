@@ -22,7 +22,7 @@
 
   /* Fonts */
   --ff-sans-serif: "Inter", "Helvetica", "Arial", sans-serif;
-  --ff-cursive: "Borel", sans-serif;
+  --ff-cursive: "Itim", cursive;
 
   @supports (font-variation-settings: normal) {
     --ff-sans-serif: "InterVariable", "Helvetica", "Arial", sans-serif;

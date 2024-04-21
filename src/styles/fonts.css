@@ -268,10 +268,12 @@
   src: url("/fonts/Inter/InterDisplay-BlackItalic.woff2") format("woff2");
 }
 
-/* Borel */
+/* Itim */
 @font-face {
-  font-family: "Borel";
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/Borel/Borel-Regular.ttf") format("ttf");
+  font-family: 'Itim';
+  src: url('/fonts/Itim/Itim-Regular.woff2') format('woff2'),
+    url('/fonts/Itim/Itim-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
