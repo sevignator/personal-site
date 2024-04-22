@@ -13,10 +13,6 @@
   /* Colors (role) */
   --clr-accent: var(--clr-blue-900);
 
-  &.dark {
-    --clr-accent: var(--clr-blue-500);
-  }
-
   /* Time */
   --timing-toggle: 250ms;
 
@@ -38,11 +34,6 @@ html {
   transition:
     background var(--timing-toggle),
     color var(--timing-toggle);
-
-  &.dark {
-    background-color: var(--clr-gray-800);
-    color: var(--clr-gray-100);
-  }
 }
 
 body {
