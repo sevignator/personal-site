@@ -6,6 +6,8 @@ const links = [
   { text: 'Tags', path: '/tags' },
   { text: 'About me', path: '/about' },
 ];
+
+const currentPath = new URL(Astro.request.url).pathname;
 ---
 
 <div class="menu-mobile">
@@ -38,7 +40,7 @@ const links = [
     {
       links.map((link) => (
         <li>
-          <a class="nav-link" href={link.path}>
+          <a class={currentPath.includes(link.path) ? 'nav-link nav-link-current' : 'nav-link'} href={link.path}>
             {link.text}
           </a>
         </li>
@@ -154,6 +156,21 @@ const links = [
         opacity: 1;
         transform: translateY(0px);
       }
+    }
+  }
+
+  .nav-link-current {
+    color: var(--clr-accent);
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      border-radius: 100vw;
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
