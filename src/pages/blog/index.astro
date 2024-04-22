@@ -9,7 +9,16 @@ const pageTitle = 'Blog';
 
 <BaseLayout pageTitle={pageTitle}>
   <div class="row">
-    {allPosts.map((post) => <BlogPostTeaser post={post} />)}
+    {
+      allPosts
+        .sort((a, b) => {
+          // Sort blog posts in descending order
+          return a.data.pubDate > b.data.pubDate ? -1 : 1;
+        })
+        .map((post) => {
+          return <BlogPostTeaser post={post} />;
+        })
+    }
   </div>
 </BaseLayout>
 

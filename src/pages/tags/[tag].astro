@@ -12,7 +12,7 @@ export const getStaticPaths = (async () => {
 
   return uniqueTags.map((tag) => {
     const filteredPosts = allPosts.filter((post) =>
-      post.data.tags.includes(tag)
+      post.data.tags.includes(tag),
     );
     return {
       params: { tag },
@@ -28,5 +28,12 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={`Tag: ${tag}`}>
-  {posts.map((post) => <BlogPostTeaser post={post} />)}
+  {
+    posts
+      .sort((a, b) => {
+        // Sort blog posts in descending order
+        return a.data.pubDate > b.data.pubDate ? -1 : 1;
+      })
+      .map((post) => <BlogPostTeaser post={post} />)
+  }
 </BaseLayout>
