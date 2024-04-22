@@ -21,6 +21,21 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <ViewTransitions />
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1;
+      }
+
+      h1 {
+        margin-top: 30px;
+      }
+    </style>
   </head>
   <body>
     <Header transition:persist />
@@ -33,20 +48,3 @@ const { pageTitle } = Astro.props;
     <Footer transition:persist />
   </body>
 </html>
-
-<!-- CSS -->
-
-<style>
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1;
-  }
-
-  h1 {
-    margin-top: 30px;
-  }
-</style>
