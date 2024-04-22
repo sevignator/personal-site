@@ -1,7 +1,7 @@
 ---
 title: The currentColor value
 pubDate: 2024-04-22
-description: A mysterious and somewhat overlooked CSS color value.
+description: A neat and often overlooked CSS color value.
 tags: ['css']
 ---
 
