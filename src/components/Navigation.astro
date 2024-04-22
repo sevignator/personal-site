@@ -40,7 +40,14 @@ const currentPath = new URL(Astro.request.url).pathname;
     {
       links.map((link) => (
         <li>
-          <a class={currentPath.includes(link.path) ? 'nav-link nav-link-current' : 'nav-link'} href={link.path}>
+          <a
+            class={
+              currentPath.includes(link.path)
+                ? 'nav-link nav-link-current'
+                : 'nav-link'
+            }
+            href={link.path}
+          >
             {link.text}
           </a>
         </li>
@@ -126,7 +133,7 @@ const currentPath = new URL(Astro.request.url).pathname;
     display: block;
     margin-top: 0.1em;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
     transition: color 250ms;
