@@ -1,7 +1,8 @@
 ---
 import Navigation from '@components/Navigation.astro';
 import SiteLogo from '@components/SiteLogo.astro';
-import ThemeToggle from '@components/ThemeToggle.astro';
+// TODO: Fix flash of unthemed content (FOUC) when the dark mode loads
+// import ThemeToggle from '@components/_ThemeToggle.astro';
 ---
 
 <header class="navbar">
@@ -13,7 +14,7 @@ import ThemeToggle from '@components/ThemeToggle.astro';
     </div>
 
     <div class="navbar-right">
-      <ThemeToggle />
+      <!-- <ThemeToggle /> -->
       <Navigation />
     </div>
   </nav>
