@@ -237,36 +237,39 @@ const currentPath = new URL(Astro.request.url).pathname;
 <!-- JS -->
 
 <script>
-  const openBtn = document.querySelector<HTMLButtonElement>('.menu-open-btn')!;
-  const closeBtn =
-    document.querySelector<HTMLButtonElement>('.menu-close-btn')!;
-  const dialogEl = document.querySelector<HTMLDialogElement>('.menu-dialog')!;
+  document.addEventListener('astro:page-load', () => {
+    const openBtn =
+      document.querySelector<HTMLButtonElement>('.menu-open-btn')!;
+    const closeBtn =
+      document.querySelector<HTMLButtonElement>('.menu-close-btn')!;
+    const dialogEl = document.querySelector<HTMLDialogElement>('.menu-dialog')!;
 
-  function openMenu() {
-    dialogEl.showModal();
-  }
+    function openMenu() {
+      dialogEl.showModal();
+    }
 
-  function closeMenu() {
-    dialogEl.dataset.closing = '';
+    function closeMenu() {
+      dialogEl.dataset.closing = '';
 
-    dialogEl.addEventListener(
-      'animationend',
-      () => {
-        delete dialogEl.dataset.closing;
-        dialogEl.close();
-      },
-      { once: true },
-    );
-  }
+      dialogEl.addEventListener(
+        'animationend',
+        () => {
+          delete dialogEl.dataset.closing;
+          dialogEl.close();
+        },
+        { once: true },
+      );
+    }
 
-  // Close modal if the user click outside of the content wrapper
-  function handleBackdropClose(e: MouseEvent) {
-    if (e.target !== dialogEl) return;
+    // Close modal if the user click outside of the content wrapper
+    function handleBackdropClose(e: MouseEvent) {
+      if (e.target !== dialogEl) return;
 
-    closeMenu();
-  }
+      closeMenu();
+    }
 
-  openBtn.addEventListener('click', openMenu);
-  closeBtn.addEventListener('click', closeMenu);
-  dialogEl.addEventListener('click', handleBackdropClose);
+    openBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    dialogEl.addEventListener('click', handleBackdropClose);
+  });
 </script>
