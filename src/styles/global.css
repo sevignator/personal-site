@@ -68,6 +68,15 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+p code {
+  display: inline-block;
+  padding-inline: 0.375em;
+  background-color: var(--clr-gray-200);
+  border: solid 1px var(--clr-gray-300);
+  border-radius: 8px;
+  color: rgb(185, 49, 49);
+}
+
 pre {
   margin-inline: -16px;
   margin-block: 24px;
