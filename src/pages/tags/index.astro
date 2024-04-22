@@ -9,8 +9,8 @@ const pageTitle = 'Tags';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class='tags'>
-    {tags.map((tag) => <Tag label={tag} />)}
+  <div class="tags">
+    {tags.sort().map((tag) => <Tag label={tag} />)}
   </div>
 </BaseLayout>
 
@@ -20,5 +20,6 @@ const pageTitle = 'Tags';
   .tags {
     display: flex;
     flex-wrap: wrap;
+    gap: 12px;
   }
 </style>

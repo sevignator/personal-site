@@ -6,20 +6,29 @@ type Props = {
 const { label } = Astro.props;
 ---
 
-<a class='tag' href={`/tags/${label}`}>
-  {label}
+<a class="tag" href={`/tags/${label}`}>
+  <div class="tag-label">
+    {label}
+  </div>
 </a>
 
 <!-- CSS -->
 
 <style>
   .tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
-    font-size: 1.15em;
-    background-color: #f8fcfd;
-    color: #00539f;
+    padding: 0.25em 0.75em;
+    border-radius: 8px;
+    background-color: var(--clr-gray-200);
+    border: solid 1px var(--clr-gray-300);
+    color: var(--clr-gray-700);
+    font-family: var(--ff-cursive);
+    text-decoration: none;
+    will-change: transform;
+    transition: transform 175ms;
+
+    &.tag:hover,
+    &.tag:focus-visible {
+      transform: scale(1.1);
+    }
   }
 </style>

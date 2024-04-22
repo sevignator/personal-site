@@ -13,9 +13,13 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout pageTitle={frontmatter.title}>
   <p class="dateline">{formatDate(frontmatter.pubDate)}</p>
+
   <slot />
+
+  <h2>Tags</h2>
+
   <div class="tags">
-    {frontmatter.tags.map((tag) => <Tag label={tag} />)}
+    {frontmatter.tags.sort().map((tag) => <Tag label={tag} />)}
   </div>
 </BaseLayout>
 
@@ -30,5 +34,6 @@ const { frontmatter } = Astro.props;
   .tags {
     display: flex;
     flex-wrap: wrap;
+    gap: 12px;
   }
 </style>
