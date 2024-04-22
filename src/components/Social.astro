@@ -1,23 +1,40 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 type Props = {
   platform: string;
-  username: string;
+  profilePath: string;
 };
 
-const { platform, username } = Astro.props;
+const { platform, profilePath } = Astro.props;
 ---
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a
+  class="social-link"
+  href={`https://www.${platform}.com/${profilePath}`}
+  target="_blank"
+>
+  <Icon name={`lucide:${platform}`} size={20} />
+  <span class="visually-hidden">{platform}</span>
+</a>
 
 <!-- CSS -->
 
 <style>
-  a {
-    display: inline-block;
-    padding: 0.35em 0.7em;
-    background-color: #4c1d95;
-    border-radius: 4px;
+  .social-link {
+    display: inline-grid;
+    place-content: center;
+    width: 40px;
+    aspect-ratio: 1;
+    background-color: var(--clr-gray-700);
+    border-radius: 100vw;
     color: white;
     text-decoration: none;
+    transition: background-color 250ms;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--clr-accent);
+    }
   }
 </style>

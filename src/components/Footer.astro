@@ -5,10 +5,11 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer>
-  <div class='container footer-content'>
-    <span>Copyright © {currentYear} Mikaël Sévigny</span>
-    <div class='social-links'>
-      <Social platform='github' username='sevignator' />
+  <div class="container footer-content">
+    <span class="copyright">Copyright © {currentYear} Mikaël Sévigny</span>
+    <div class="social-links">
+      <Social platform="linkedin" profilePath="in/mikael-sevigny-347848bb" />
+      <Social platform="github" profilePath="sevignator" />
     </div>
   </div>
 </footer>
@@ -20,19 +21,22 @@ const currentYear = new Date().getFullYear();
     padding-block: 10px;
     margin-top: 40px;
     background-color: var(--clr-gray-300);
+    color: var(--clr-gray-700);
     font-size: 0.925rem;
     transition: background-color var(--timing-toggle);
   }
 
   .footer-content {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: 20px;
     height: fit-content;
     text-align: center;
   }
+
   .social-links {
     display: flex;
+    gap: 8px;
   }
 </style>

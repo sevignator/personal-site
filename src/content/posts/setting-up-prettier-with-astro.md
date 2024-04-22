@@ -1,7 +1,7 @@
 ---
 title: Setting up Prettier with Astro
 pubDate: 2024-04-20
-description: How to have all of your Astro code automatically formatted by Prettier.
+description: How to format you Astro code auto-magically using Prettier.
 tags: ['prettier', 'astro']
 ---
 
