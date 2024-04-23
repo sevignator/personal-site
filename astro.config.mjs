@@ -5,4 +5,9 @@ import icon from 'astro-icon';
 export default defineConfig({
   site: 'https://miksevigny.com',
   integrations: [icon()],
+  markdown: {
+    shikiConfig: {
+      theme: 'tokyo-night',
+    },
+  },
 });
