@@ -57,3 +57,7 @@ button:hover {
 ```
 
 While authoring your CSS, using `currentColor` effectively can help reduce redundancy and keep your code clean. Be mindful not to fall into the "trap of cleverness" though, and to only use it if there's a good reason to.
+
+## Sources
+
+- [The `<color>` value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
