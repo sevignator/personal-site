@@ -12,7 +12,14 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p class="dateline">{formatDate(frontmatter.pubDate)}</p>
+  <p class="dateline">
+    {formatDate(frontmatter.pubDate)}
+    {
+      frontmatter.modDate
+        ? `(modified on ${formatDate(frontmatter.modDate)})`
+        : undefined
+    }
+  </p>
 
   <slot />
 

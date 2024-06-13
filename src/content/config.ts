@@ -1,10 +1,13 @@
 import { z, defineCollection } from 'astro:content';
 
+const postTags = ['css', 'writing'] as const;
+
 const postsCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
     pubDate: z.date(),
+    modDate: z.date().optional(),
     description: z.string(),
     image: z
       .object({
@@ -12,7 +15,7 @@ const postsCollection = defineCollection({
         alt: z.string(),
       })
       .optional(),
-    tags: z.array(z.string()),
+    tags: z.array(z.enum(postTags)),
   }),
 });
 
